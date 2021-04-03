@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<meta charset="UTF-8">
+	<title>Nouveau confinement&#8239;: l'excuse des jeunes - Décoder la Covid</title>
+	<link rel="stylesheet" type="text/css" href="../assets/decoder.css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+
+
+<p class="sr-only">
+	<a href="#content">
+		Aller au contenu
+	</a>
+</p>
+	
+<main id="content">
+	<header>
+		<p>
+			<a href="../index.html">
+				Décoder la Covid
+			</a>
+		</p>
+		<h1>Nouveau confinement&#8239;: l'excuse des jeunes</h1>
+	</header>
+
+    <figure class="video">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/APG2-DEWrW4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </figure>
+
+    <p>
+        Ça y est, le nouveau confinement est lancé.
+    </p>
+    
+    <p>
+        Depuis le début de cette grande aventure, les « sachant » nous proposent chaque jour de nouveaux indicateurs pour relancer la panique.
+    </p>
+    <p>
+        Les gens commencent à avoir compris que quand on devient vieux, au bout d’un moment on décède. Aussi, le fait de suivre les décès de nos anciens en direct à la télé commence à ne plus faire trop peur.
+    </p>
+    <p>
+        En plus, comme on est en train de les vacciner, ça la foutrait mal de constater qu’on ne voit pas de différence de décès entre avant la campagne de vaccination et après. La nouvelle stratégie est donc de faire croire que l’hécatombe arrive aussi chez les plus jeunes. Enfin, quand on dit jeune, on parle des moins de 70 ans, il ne s’agirait pas de manquer de galanterie envers notre première dame.
+    </p>
+    <p>
+        En plus, une fois qu’on aura vacciné tous les vieux, il faudra bien trouver quelqu’un d’autre à qui faire des piqûres, il ne s’agirait pas de voir s’effondrer la bourse.
+    </p>
+    <p>
+        Nous allons donc ici vérifier si les données mises en ligne par Santé publique France, nous permettent d’avoir les mêmes conclusions que nos <q>sachants</q>. D’habitude, je n’utilise pas ces données, car je considère qu’elles grossissent la situation actuelle, je n’utilise que les statistiques de mortalité toutes causes qui sont infalsifiables. Mais puisque c’est là-dessus que s’appuie la politique sanitaire, autant aller les voir.
+    </p>
+
+    <p>
+        Le seul matériel nécessaire pour les réaliser est votre logiciel de tableur favori
+        (<a href="https://fr.libreoffice.org/">LibreOffice Calc</a>, par exemple).
+    </p>
+
+	<h2>1. Accéder aux chiffres utilisés par le gouvernement</h2>
+    
+    <ol>
+        <li>Se rendre sur <a href="https://geodes.santepubliquefrance.fr/">geodes.santepubliquefrance.fr</a></li>
+        <li>Cliquer sur <a href="https://geodes.santepubliquefrance.fr/#c=indicator">Indicateurs : cartes, données et graphiques</a>
+        <li>Dans la colonne de gauche, cliquer sur 
+            <kdb>C</kdb> &rarr; 
+            <kdb>COVID-19</kdb> &rarr; 
+            <kdb>Données hospitalières</kdb>
+        </li>
+        <li>Choisir <kdb>Nombre de personnes actuellement en soins critiques (SR/SI/SC) par âge</kdb> puis, dans un premier temps, sélectionner <kdb>tous âges</kdb></li>
+        <li>Au-dessus de la carte qui s'affiche, cliquer sur <kdb>Tableau</kdb> pour récupérer tous les données sources (les chiffres) qui sont représentés visuellement sur la carte.</li>
+        <li>Cliquer sur l'onglet <kdb>Synthèse</kdb> pour apprendre comment est créé cet indicateur.
+        <li>Lire le petit <kdb>4)</kdb> pour constater comment cet indicateur a évolué au cours de l'épidémie, afin d'augmenter le nombre de cas comptés par cet indicateur, et ainsi flouer l'analyser, dramatiser la situation en faisant croire que de nouveaux variants seraient pour les jeunes plus dangereux que les variants précédents.</li>
+    </ol>
+    
+	<h2>2. Récupérer les données</h2>
+	
+	<p>
+        Nous allons maintenant devoir faire le travail un peu fastidieux qui consiste à récupérer plusieurs fichiers de données et les fusionner 
+        afin de pouvoir créer des graphiques réellement utiles, quoiqu'ayant l'inconvénient d'être beaucoup moins effrayants que ceux affichés d'ordinaire.
+    </p>
+    <p>
+        Nous allons récupérer les données d'évolutions du nombre de personnes en soin critiques, classées par âge, 
+        afin de voir comment la répartition par âge des patients admises en soins critique évolue dans le temps et de répondre à la question&#8239;: 
+    </p>
+    
+    <blockquote>
+        Les nouveaux variants sont-ils plus dangereux pour les jeunes que les précédents&#8239;?
+    </blockquote>
+    
+    <p>
+        Commencez par créer un dossier dédié sur votre système de fichier. Vous pouvez, par exemple, appeler ce dossier <kdb>jeunes-et-covid</kdb>
+    </p>
+    
+    <ol>
+        <li>Dans le panneau de gauche, sous <kdb>Nombre de personnes actuellement en soins critiques (SR/SI/SC) par âge</kdb>, sélectionner <kdb>0-9 ans</kdb></li>
+        <li>Dans l'onglet <kdb>Synthèse</kdb>, récupérer le fichier de tableur pour cette tranche d'âge en cliquant sur <img src="images/santepubliquefrance-actions.png" alt="actions" /> puis <kdb>Exporter</kdb>.</li>
+        <li>Dans le panneau qui s'ouvre à gauche, choisir votre format préféré, suivant que vous soyez équipé de Microsoft Excel (xslx) ou LibreOffice/OpenOffice (ods).</li>
+        <li>Cliquer sur <kdb>Exécuter</kdb></li>
+        <li>Choisir <kdb>Enregistrer le fichier</kdb></li>
+        <li>Donnez-lui un nom reconnaissable, comme <kdb>0-9-ans.ods</kdb></li>
+        <li>Répétez ce processus pour chaque tranche d'âge</li>
+    </ol>
+    
+    <h2>3. Regrouper les données</h2>
+    
+    <p>
+        Ici, il va s'agir de regrouper toutes ces données disparates dans un seul grand tableau, afin de pouvoir générer un graphique d'évolution des répartitions.
+    </p>
+    
+    <ol>
+        <li>Copiez/coller le fichier <kdb>0-9-ans.ods</kdb>, et appelez le nouveau fichier ainsi créé <kdb>compilation.ods</kdb>, par exemple.</li>
+        <li>Ouvrez ce fichier et rendez-vous dans l'onglet <kdb>Graphiques</kdb>, dans lequel se trouvent les données historiques.</li>
+        <li>Renommez <q>Valeur</q> en <q>0-9 ans</q> afin que ce soit plus clair.</li>
+        <li>Ouvrez le fichier <kdb>10-19-ans.ods</kdb> et rendez-vous dans l'onglet <kdb>Graphiques</kdb>.</li>
+        <li>Cliquez sur la colonne B pour sélectionner les données pour cette tranches d'âge.</li>
+        <li>Copiez ces donnez (<kdb>Ctrl</kdb> + <kdb>C</kdb>)</li>
+        <li>Fermez le fichier de cettre tranche d'âge</li>
+        <li>Retournez dans le fichier compilation.ods et collez (<kdb>Ctrl</kdb> + <kdb>V</kdb>) les données du presse papier dans la première colonne libre.</li>
+        <li>Renommez <q>Valeur</q> pour lui assigner la tranche d'âge appropriée.</li>
+        <li>Répétez ce processus pour chque tranche d'âge, jusqu'à ce que vous aillez toutes les données dans un seul fichier.</li>
+	</ol>
+	
+	<p>
+        À ce stade, vous données devraient ressembler à ça&nbsp;:
+    </p>
+    <p>
+        <img src="donnees-consolidees.png" alt="données Covid-19 consolidées ; soins critiques dont réanimation par tranche d'âges" />
+    </p>
+	
+	<p>
+        L'ennui ici est que les chiffres ne sont pas au format nombre mais au format texte&8239;! En effet, lorsque vous cliquez sur une cellule, vous pouvez constater qu'un apostrophe précède le nombre. Ceci va nous empêcher de générer un graphique.
+    </p>
+    
+    <p>
+        Corrigeons ça&#8239;:
+    </p>
+    
+    <ol>
+        <li>Sélectionnez la plage des données incriminées par un cliquer-glisser.</li>
+        <li>Allez dans <kdb>Édition</kdb> &rarr; <kdb>Rechercher et remplacer…</kdb></li>
+        <li>Paramétrez de la sorte afin d'effacer tout ce qui n'est pas un nombre&#8239;:<br />
+            <img src="libre-office-texte-vers-nombre.png" alt="Convertir un texte en nombre dans LibreOffice" />
+        </li>
+        <li>Cliquez sur <kdb>Tout remplacer</kdb></li>
+    </ol>
+    
+    <p>
+        Si l'opération a fonctionné, chaque nombre devrait maintenant être alignés à droite dans sa cellule.
+    </p>
+    
+    <p>
+        Il se peut que vos nombres apparaissent avec une virgule. Comme il n'y aurait pas ici de sens à compter des moitiés ou des quarts d'être humain, nous allons corriger ça. Sélectionnez tout via <kdb>Édition</kdb> &rarr; <kdb>Tout sélectionner</kdb> puis allez dans <kdb>Format</kdb> &rarr; <kdb>Format numérique</kdb> &rarr; <kdb>Général</kdb>.
+    </p>
+    
+    <p>
+        Un peu de rangement maintenant&#8239;!
+    </p>
+    
+    <p>Supprimons les lignes qui ne nous intéressent pas&nbsp;:</p>
+    
+    <ul>
+        <li>en haut&nbsp;: les 3 premières lignes</li>
+        <li>en bas&nbsp;: les 2 tableau supplémentaires intitulés <q>les 10 premiers</q> et <q>les 10 derniers</q></li>
+    </ul>
+            
+    <h2>4. Générer les graphiques</h2>
+    
+    <p>
+        Le plus gros du travail est fait.
+    </p>
+    
+    <p>
+        Il ne reste plus qu'à générer les graphiques.
+    </p>
+    
+    <h3>4.1. Évolution absolue</h3>
+    
+    <ol>
+        <li>Sélectionnez tout via <kdb>Édition</kdb> &rarr; <kdb> Tout sélectionner</kdb> (ou <kdb>Ctrl</kdb> + <kdb>A</kdb>)</li>
+        <li>Créez le graphique correspondant au cellules ainsi sélectionnées via <kdb>Insertion</kdb> &rarr; <kdb>Diagramme…</kdb></li>
+        <li>Dans <kdb>Type de diagramme</kdb>, choisir <kdb>Zone</kdb> puis <kdb>Normal</kdb> (le premier de la liste).</li>
+        <li>Cliquer sur <kdb>Terminer</kdb>
+    </ol>
+	
+	<p>
+        Si tout s'est bien déroulé, vous devriez obtenir un graphique de ce type&nbsp;:
+    </p>
+    <p>
+        <img src="graphique-covid-evolution-nombre-de-cas-par-age.png" alt="Graphique Covid-19, évolution absolue du nombre de cas par tranche d'âge" />
+    </p>
+    
+	<p>
+        Ce graphique nous permet de voir l'évolution dans le temps du nombre cas par tranche d'âge, mais le graphique ainsi généré 
+        ne permet pas de distinguer très bien si oui ou non les jeunes sont plus affectés récemment.
+    </p>
+    
+    <p>
+        On va donc choisir un autre type de graphique.
+    </p>
+    
+    <h3>4.2. Évolution des répartitions&nbsp;: les jeunes sont-ils plus affectés maintenant qu'auparavant&#8239;?</h3>
+    
+    <ol>
+        <li>Sélectionnez tout via <kdb>Édition</kdb> &rarr; <kdb> Tout sélectionner</kdb> (ou <kdb>Ctrl</kdb> + <kdb>A</kdb>)</li>
+        <li>Créez le graphique correspondant au cellules ainsi sélectionnées via <kdb>Insertion</kdb> &rarr; <kdb>Diagramme…</kdb></li>
+        <li>Dans <kdb>Type de diagramme</kdb>, choisir <kdb>Zone</kdb> puis <kdb>Pourcentage empilé</kdb> (le dernier de la liste).</li>
+        <li>Cliquer sur <kdb>Terminer</kdb>
+    </ol>
+	
+	<p>
+        Si tout s'est bien déroulé, vous devriez obtenir un graphique de ce type&nbsp;:
+    </p>
+    <p>
+        <img src="graphique-covid-evolution-repartition-nombre-de-cas-par-age.png" alt="Graphique Covid-19, évolution relative du nombre de cas par tranche d'âge" />
+    </p>
+    
+    <p>
+        On peine à voir sur ce graphique une mortalité des jeunes qui deviendrait plus importante au fil du temps.
+    </p>
+    
+    
+	<p class="end">Fin du module</p>
+	
+	<footer>
+		<h4>Notes</h4>
+	</footer>
+</main>
+
+
+
+<aside id="sidepanel">
+
+    <nav>
+        <h4>
+            <a href="../index.html">Décoder la Covid</a>
+        </h4>
+        
+        <ul>
+            <li>
+                <strong>Nouveau confinement&#8239;: l'excuse des jeunes</strong>
+            </li>
+
+        </ul>
+    </nav>
+</aside>
+
+</body></html>
